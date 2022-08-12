@@ -1,10 +1,6 @@
 // Set up redis config
-if (
-  !process.env.REDIS_PORT ||
-  !process.env.REDIS_HOST ||
-  !process.env.REDIS_PASSWORD
-) {
-  throw Error("REDIS_PORT, REDIS_HOST and/or REDIS_PASSWORD is not set");
+if (!process.env.REDIS_PORT || !process.env.REDIS_HOST) {
+  throw Error("REDIS_PORT or REDIS_HOST is not set");
 }
 
 let redisPort: number;

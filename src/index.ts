@@ -7,11 +7,14 @@ import queues from "./config/queues";
 const app = express();
 
 // Create arena
-const arena = Arena({
-  // Include a reference to the bee-queue or bull libraries, depending on the library being used.
-  BullMQ: Queue,
-  queues,
-});
+const arena = Arena(
+  {
+    // Include a reference to the bee-queue or bull libraries, depending on the library being used.
+    BullMQ: Queue,
+    queues,
+  },
+  { disableListen: true, basePath: "/", useCdn: true }
+);
 
 app.use("/", arena);
 

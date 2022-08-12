@@ -20,6 +20,7 @@ const createQueues = (redisConfig: any) => {
   const queues = queueNameArray.map((queueName) => ({
     type: "bullmq",
     name: queueName,
+    hostId: "worker",
     redis: redisConfig,
   }));
 
