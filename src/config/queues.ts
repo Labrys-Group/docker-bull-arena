@@ -15,16 +15,12 @@ try {
   throw Error("QUEUE_NAMES is not set correctly");
 }
 
-const createQueues = (redisConfig: any) => {
-  // Create all the queues
-  const queues = queueNameArray.map((queueName) => ({
-    type: "bullmq",
-    name: queueName,
-    hostId: "worker",
-    redis: redisConfig,
-  }));
+// Create all the queues
+const queues = queueNameArray.map((queueName) => ({
+  type: "bullmq",
+  name: queueName,
+  hostId: "worker",
+  redis: redisConfig,
+}));
 
-  return queues;
-};
-
-export default createQueues(redisConfig);
+export default queues;

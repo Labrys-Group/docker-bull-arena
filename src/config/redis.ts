@@ -5,7 +5,7 @@ if (!process.env.REDIS_PORT || !process.env.REDIS_HOST) {
 
 let redisPort: number;
 try {
-  redisPort = parseInt(process.env.REDIS_PORT);
+  redisPort = parseInt(process.env.REDIS_PORT, 10);
 } catch {
   throw Error("REDIS_PORT is not set correctly");
 }

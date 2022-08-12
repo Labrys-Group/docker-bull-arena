@@ -1,7 +1,7 @@
 import Arena from "bull-arena";
-
-import express from "express";
 import { Queue } from "bullmq";
+import express from "express";
+
 import queues from "./config/queues";
 
 const app = express();
