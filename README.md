@@ -16,7 +16,7 @@ The redis server must be configured using the following environment variables:
 
 The bull queue names are defined using the `QUEUE_NAMES` environment variable. To support multiple queues, this can be a comma seperated list of queues names. These must exactly match the names provided to BullMQ.
 
-```
+```env
 QUEUE_NAMES="queue1,queue2,queue3"
 ```
 

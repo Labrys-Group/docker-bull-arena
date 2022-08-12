@@ -7,7 +7,7 @@ COPY package-lock.json package-lock.json
 
 RUN npm install --ci
 
-RUN useradd -d /home/appuser -m -s /bin/bash appuser
+RUN addgroup -S appgroup && adduser -S appuser -G appgroup
 
 USER appuser
 
